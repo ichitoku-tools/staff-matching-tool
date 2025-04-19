@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>たろう｜もみ徳 雲見坂店</title>
+  <style>
+    body { font-family: sans-serif; margin: 0; padding: 1rem; background: #f9f9f9; color: #333; }
+    .container { max-width: 600px; margin: auto; background: #fff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    img { width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; }
+    h1 { font-size: 1.5rem; margin-bottom: 0.3rem; }
+    h2 { font-size: 1.2rem; margin-top: 1.5rem; border-bottom: 1px solid #ddd; padding-bottom: 0.3rem; }
+    table { width: 100%; border-collapse: collapse; margin-top: 0.5rem; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid #eee; }
+    .message { margin: 1rem 0; font-weight: bold; color: #444; background: #eef6ea; padding: 0.5rem 1rem; border-left: 4px solid #84c784; border-radius: 4px; }
+    .back-link { display: block; margin-top: 2rem; text-align: center; color: #3b7ddd; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="https://placehold.jp/300x300.png" alt="たろうの写真">
+    <h1>たろう</h1>
+    <p><strong>勤務店舗：</strong>もみ徳 雲見坂店</p>
+    <p>
+      こんにちは、もみ徳のたろうです。<br>
+      じっくり丁寧に、あなたの身体と向き合う施術を心がけています。<br>
+      特に「力強いもみ」や「深いコリへのアプローチ」が得意です。<br>
+      気になるところがあれば、遠慮なくお伝えくださいね。
+    </p>
+
+    <h2>得意な施術</h2>
+    <ul>
+      <li>コリに的確なアプローチ</li>
+      <li>力強いもみ</li>
+      <li>施術後のスッキリ感</li>
+    </ul>
+
+    <h2>本日のひとこと</h2>
+    <div class="message" id="random-message"></div>
+
+    <h2>出勤スケジュール</h2>
+    <table>
+      <tr><th>曜日</th><th>出勤時間</th></tr>
+      <tr><td>月</td><td>10:00〜14:00</td></tr>
+      <tr><td>火</td><td>12:00〜18:00</td></tr>
+      <tr><td>水</td><td>お休み</td></tr>
+      <tr><td>木</td><td>14:00〜20:00</td></tr>
+      <tr><td>金</td><td>10:00〜16:00</td></tr>
+      <tr><td>土</td><td>お休み</td></tr>
+      <tr><td>日</td><td>10:00〜13:00</td></tr>
+    </table>
+
+    <a class="back-link" href="index.html">← 他のスタッフを見る</a>
+  </div>
+
+  <script>
+    const messages = [
+      "今日は肩を中心に、じっくりほぐしていきましょう。",
+      "深部のコリまで、しっかりアプローチしますね。",
+      "お疲れの場所があれば、遠慮なくお伝えください！",
+      "今日も全力で、あなたの体をサポートします。",
+      "終わった後の“軽さ”、楽しみにしててください！"
+    ];
+    const random = messages[Math.floor(Math.random() * messages.length)];
+    document.getElementById("random-message").textContent = random;
+  </script>
+</body>
+</html>
