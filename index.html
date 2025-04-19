@@ -3,72 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>もみ徳 スタッフ一覧</title>
+  <title>診断結果｜もみ徳スタッフマッチング</title>
   <style>
-    body { font-family: sans-serif; margin: 0; padding: 1rem; background: #f4f4f4; }
-    h1 { text-align: center; font-size: 1.8rem; margin-bottom: 2rem; }
-    .staff-list { display: flex; flex-direction: column; gap: 1.5rem; max-width: 600px; margin: auto; }
-    .staff-card { display: flex; align-items: center; background: white; padding: 1rem; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); transition: transform 0.2s ease; gap: 1rem; }
-    .staff-card:hover { transform: scale(1.02); }
-    .staff-card img { width: 100px; height: 100px; object-fit: cover; border-radius: 50%; }
-    .staff-info { flex-grow: 1; }
-    .staff-info h2 { font-size: 1.2rem; margin: 0 0 0.3rem; }
-    .staff-info p { font-size: 0.95rem; color: #555; margin: 0 0 0.5rem; }
-    .staff-info a { display: inline-block; padding: 0.4rem 0.8rem; background: #3b7ddd; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem; }
+    body { font-family: sans-serif; background: #f4f4f4; padding: 2rem 1rem; color: #333; }
+    h1 { text-align: center; margin-bottom: 2rem; font-size: 1.8rem; }
+    .results { max-width: 800px; margin: auto; display: flex; flex-direction: column; gap: 1.5rem; }
+    .card { background: #fff; padding: 1.2rem; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); display: flex; gap: 1rem; align-items: center; }
+    .card img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; }
+    .info { flex: 1; }
+    .info h2 { margin: 0 0 0.3rem; font-size: 1.2rem; }
+    .info p { margin: 0.2rem 0; font-size: 0.95rem; }
+    .info a { margin-top: 0.5rem; display: inline-block; background: #3b7ddd; color: white; padding: 0.4rem 0.8rem; border-radius: 5px; text-decoration: none; font-size: 0.9rem; }
+    .score { font-weight: bold; font-size: 1.1rem; color: #3b7ddd; }
   </style>
 </head>
 <body>
-  <h1>もみ徳 スタッフ一覧</h1>
+  <h1>診断結果</h1>
 
-  <div class="staff-list">
-    <div class="staff-card">
-      <img src="https://placehold.jp/100x100.png" alt="たろう">
-      <div class="staff-info">
-        <h2>たろう</h2>
-        <p>雲見坂店 / 男性</p>
-        <a href="tarou.html">詳しく見る</a>
-      </div>
-    </div>
-    <div class="staff-card">
-      <img src="https://placehold.jp/100x100.png" alt="みき">
-      <div class="staff-info">
-        <h2>みき</h2>
-        <p>凪ヶ原店 / 女性</p>
-        <a href="miki.html">詳しく見る</a>
-      </div>
-    </div>
-    <div class="staff-card">
-      <img src="https://placehold.jp/100x100.png" alt="ゆい">
-      <div class="staff-info">
-        <h2>ゆい</h2>
-        <p>星影の杜店 / 女性</p>
-        <a href="yui.html">詳しく見る</a>
-      </div>
-    </div>
-    <div class="staff-card">
-      <img src="https://placehold.jp/100x100.png" alt="はるか">
-      <div class="staff-info">
-        <h2>はるか</h2>
-        <p>茜渓店 / 女性</p>
-        <a href="haruka.html">詳しく見る</a>
-      </div>
-    </div>
-    <div class="staff-card">
-      <img src="https://placehold.jp/100x100.png" alt="けんた">
-      <div class="staff-info">
-        <h2>けんた</h2>
-        <p>虹峰店 / 男性</p>
-        <a href="kenta.html">詳しく見る</a>
-      </div>
-    </div>
-    <div class="staff-card">
-      <img src="https://placehold.jp/100x100.png" alt="そうた">
-      <div class="staff-info">
-        <h2>そうた</h2>
-        <p>鈴葉店 / 男性</p>
-        <a href="souta.html">詳しく見る</a>
-      </div>
-    </div>
-  </div>
-</body>
-</html>
+  <div class="results" id="results"></div>
+
+  <script>
+    // スタッフデータ（仮）
+    const staffList = [
+      {
+        name: "たろう",
+        gender: "male",
+        area: "kumomizaka",
+        skills: ["korini", "chikara", "sukkiri"],
+        image: "https://placehold.jp/100x100.png",
+        url: "tarou.html"
+      },
+      {
+        name: "みき",
+        gender: "female",
+        area: "nagigahara",
+        skills: ["teinei", "waza", "sukkiri"],
+        image: "https://placehold.jp/100x100.png",
+        url: "miki.html"
+      },
+      {
+        name: "ゆい",
+        gender: "female",
+        area: "hoshikage",
+        skills: ["korini", "rakuni", "teinei"],
+        image: "https://placehold.jp/100x100.png",
+        url: "yui.html"
+      },
+      {
+        name: "はるか",
+        gender: "female",
+        area: "akanedani",
+        skills: ["waza", "korini", "sukkiri"],
+        image: "https://placehold.jp/100x100.png",
+        url: "haruka.html"
+      },
+      {
+        name: "けんた",
+        gender: "male",
+        area: "kohou",
