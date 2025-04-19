@@ -7,13 +7,14 @@
   <style>
     body { font-family: sans-serif; margin: 0; padding: 1rem; background: #f4f4f4; }
     h1 { text-align: center; font-size: 1.8rem; margin-bottom: 2rem; }
-    .staff-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; max-width: 900px; margin: auto; }
-    .staff-card { background: white; padding: 1rem; border-radius: 12px; text-align: center; box-shadow: 0 2px 6px rgba(0,0,0,0.1); transition: transform 0.2s ease; }
-    .staff-card:hover { transform: scale(1.03); }
-    .staff-card img { width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin-bottom: 0.5rem; }
-    .staff-card h2 { font-size: 1.1rem; margin: 0.2rem 0; }
-    .staff-card p { font-size: 0.9rem; color: #555; margin: 0.2rem 0 0.6rem; }
-    .staff-card a { display: inline-block; padding: 0.4rem 0.8rem; background: #3b7ddd; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem; }
+    .staff-list { display: flex; flex-direction: column; gap: 1.5rem; max-width: 600px; margin: auto; }
+    .staff-card { display: flex; align-items: center; background: white; padding: 1rem; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); transition: transform 0.2s ease; gap: 1rem; }
+    .staff-card:hover { transform: scale(1.02); }
+    .staff-card img { width: 100px; height: 100px; object-fit: cover; border-radius: 50%; }
+    .staff-info { flex-grow: 1; }
+    .staff-info h2 { font-size: 1.2rem; margin: 0 0 0.3rem; }
+    .staff-info p { font-size: 0.95rem; color: #555; margin: 0 0 0.5rem; }
+    .staff-info a { display: inline-block; padding: 0.4rem 0.8rem; background: #3b7ddd; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem; }
   </style>
 </head>
 <body>
@@ -22,39 +23,51 @@
   <div class="staff-list">
     <div class="staff-card">
       <img src="https://placehold.jp/100x100.png" alt="たろう">
-      <h2>たろう</h2>
-      <p>雲見坂店 / 男性</p>
-      <a href="tarou.html">詳しく見る</a>
+      <div class="staff-info">
+        <h2>たろう</h2>
+        <p>雲見坂店 / 男性</p>
+        <a href="tarou.html">詳しく見る</a>
+      </div>
     </div>
     <div class="staff-card">
       <img src="https://placehold.jp/100x100.png" alt="みき">
-      <h2>みき</h2>
-      <p>凪ヶ原店 / 女性</p>
-      <a href="miki.html">詳しく見る</a>
+      <div class="staff-info">
+        <h2>みき</h2>
+        <p>凪ヶ原店 / 女性</p>
+        <a href="miki.html">詳しく見る</a>
+      </div>
     </div>
     <div class="staff-card">
       <img src="https://placehold.jp/100x100.png" alt="ゆい">
-      <h2>ゆい</h2>
-      <p>星影の杜店 / 女性</p>
-      <a href="yui.html">詳しく見る</a>
+      <div class="staff-info">
+        <h2>ゆい</h2>
+        <p>星影の杜店 / 女性</p>
+        <a href="yui.html">詳しく見る</a>
+      </div>
     </div>
     <div class="staff-card">
       <img src="https://placehold.jp/100x100.png" alt="はるか">
-      <h2>はるか</h2>
-      <p>茜渓店 / 女性</p>
-      <a href="haruka.html">詳しく見る</a>
+      <div class="staff-info">
+        <h2>はるか</h2>
+        <p>茜渓店 / 女性</p>
+        <a href="haruka.html">詳しく見る</a>
+      </div>
     </div>
     <div class="staff-card">
       <img src="https://placehold.jp/100x100.png" alt="けんた">
-      <h2>けんた</h2>
-      <p>虹峰店 / 男性</p>
-      <a href="kenta.html">詳しく見る</a>
+      <div class="staff-info">
+        <h2>けんた</h2>
+        <p>虹峰店 / 男性</p>
+        <a href="kenta.html">詳しく見る</a>
+      </div>
     </div>
     <div class="staff-card">
       <img src="https://placehold.jp/100x100.png" alt="そうた">
-      <h2>そうた</h2>
-      <p>鈴葉店 / 男性</p>
-      <a href="souta.html">詳しく見る</a>
+      <div class="staff-info">
+        <h2>そうた</h2>
+        <p>鈴葉店 / 男性</p>
+        <a href="souta.html">詳しく見る</a>
+      </div>
     </div>
   </div>
 </body>
