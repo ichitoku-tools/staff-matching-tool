@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>診断でわかるあなたにぴったりのスタッフ｜もみ徳マッチング</title>
+  <!-- 再デプロイ対策コメント -->
+  <style>
+    body { font-family: sans-serif; background: #f4f4f4; padding: 2rem 1rem; color: #333; }
+    h1 { text-align: center; margin-bottom: 2rem; font-size: 1.8rem; }
+    .results { max-width: 800px; margin: auto; display: flex; flex-direction: column; gap: 1.5rem; }
+    .card { background: #fff; padding: 1.2rem; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); display: flex; gap: 1rem; align-items: center; cursor: pointer; transition: transform 0.2s; }
+    .card:hover { transform: scale(1.02); }
+    .card img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; }
+    .info { flex: 1; }
+    .info h2 { margin: 0 0 0.3rem; font-size: 1.2rem; }
+    .info p { margin: 0.2rem 0; font-size: 0.95rem; }
+    .score { font-weight: bold; font-size: 1.1rem; color: #3b7ddd; }
+
+    /* モーダル */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.5);
+    }
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 500px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .modal-content h2 { margin-top: 0; }
+    .modal-content button {
+      margin-top: 1.5rem;
+      background: #3b7ddd;
+      color: white;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>診断でわかるあなたにぴったりのスタッフ</h1>
+
+  <div class="results" id="results"></div>
+
+  <div class="modal" id="popup">
+    <div class="modal-content" id="popup-content">
+      <h2>スタッフ紹介</h2>
+      <p>読み込み中...</p>
+      <button onclick="closePopup()">閉じる</button>
+    </div>
+  </div>
+
+  <script src="result.js"></script>
+</body>
+</html>
